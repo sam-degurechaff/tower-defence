@@ -57,7 +57,7 @@ void initializeModes() {
 
 void initializeVariables() {
   //Load Images & Gifs
-  introAnimation=new Gif("gif-start/gif(", ").jpg", 102, 3, width/2, height/2, width, height);
+  introAnimation=new Gif("gif-start/gif(", ").jpg", 100, 3, width/2, height/2, width, height);
   //Load Fonts
 
   //Create Collections of Objects
@@ -68,7 +68,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-
+nextWave=new Button("START",width/2.3*height/4,200,100,green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset
@@ -76,6 +76,9 @@ void makeButtons() {
 
 void makeNodes() {
   //Plot the nodes on the map
+  nodes=new Node[8];
+  
+  nodes[0]=new Node(200,400,0,-1);
 }
 
 
@@ -92,4 +95,6 @@ void draw() {
   } else if (mode == GAMEOVER) {
     gameOver();
   }
+  
+  textSize(20);text(mouseX+","+mouseY,mouseX,mouseY-20);
 }

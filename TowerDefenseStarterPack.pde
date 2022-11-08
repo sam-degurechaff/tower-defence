@@ -1,7 +1,7 @@
 //Tower Defense Game
 //YOUR NAME GOES HERE
 //Programming 12
-
+//https://youtube.com/playlist?list=PL__Tph-7Dyp090HR9Ypp_8FD1C-ik4PTz
 // ================ GLOBAL VARIABLES =================
 
 final int INTRO    = 0;
@@ -25,10 +25,11 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start;
+Button start, nextwave;
 
 //Collections of objects
-
+Node[] nodes;
+ArrayLish<Mob> mobs;
 //Images and Gifs
 Gif introAnimation;
 //Fonts
@@ -61,6 +62,7 @@ void initializeVariables() {
   //Load Fonts
 
   //Create Collections of Objects
+  mobs=new ArayList<Mob>();
 }
 
 void makeButtons() {
@@ -68,7 +70,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-nextWave=new Button("START",width/2.3*height/4,200,100,green, white);
+  nextWave=new Button("START", width/2.3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset
@@ -77,8 +79,8 @@ nextWave=new Button("START",width/2.3*height/4,200,100,green, white);
 void makeNodes() {
   //Plot the nodes on the map
   nodes=new Node[8];
-  
-  nodes[0]=new Node(200,400,0,-1);
+
+  nodes[0]=new Node(200, 400, 0, -1);
 }
 
 
@@ -95,6 +97,7 @@ void draw() {
   } else if (mode == GAMEOVER) {
     gameOver();
   }
-  
-  textSize(20);text(mouseX+","+mouseY,mouseX,mouseY-20);
+
+  textSize(20);
+  text(mouseX+","+mouseY, mouseX, mouseY-20);
 }

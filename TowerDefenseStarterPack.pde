@@ -25,11 +25,13 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start, nextwave;
+Button start, nextWave;
 
 //Collections of objects
 Node[] nodes;
-ArrayLish<Mob> mobs;
+ArrayList<Mob> mobs;
+ArrayList<Tower> towers;
+ArrayList<Bullet> bullets;
 //Images and Gifs
 Gif introAnimation;
 //Fonts
@@ -62,7 +64,10 @@ void initializeVariables() {
   //Load Fonts
 
   //Create Collections of Objects
-  mobs=new ArayList<Mob>();
+  mobs=new ArrayList<Mob>();
+  towers=new ArrayList<Tower>();
+  //tts
+  towers.add(new Tower(100, 100, 0, 60));
 }
 
 void makeButtons() {
@@ -70,7 +75,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-  nextWave=new Button("START", width/2.3*height/4, 200, 100, green, white);
+  nextWave=new Button("START", width/2, 3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset

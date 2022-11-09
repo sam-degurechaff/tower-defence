@@ -20,9 +20,9 @@ class Mob {
   void act() {
     x=x+vx;
     y=y+vy;
-    inti=0;
+    int i=0;
     while (i<nodes.length) {
-      if (dist(nodesx[i].x, nodes[i].y, x, y)<4) {
+      if (dist(nodes[i].x, nodes[i].y, x, y)<4) {
         vx=nodes[i].dx;
         vy=nodes[i].dy;
       }

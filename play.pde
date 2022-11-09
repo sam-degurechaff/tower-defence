@@ -31,5 +31,24 @@ void animateThings() {
     myMob.show();
     i++;
   }
+  i=0;
+  while (i<towers.size()) {
+    Tower myTower=towers.get (i);
+    myTower.act();
+    myTower.show();
+    i++;
+  }
+  i=0;
+  while (i<bullets.size()) {
+    Tower myBullet=Bullet.get (i);
+    myBullet.act();
+    myBullet.show();
+    i++;
+  }
 }
-voide hacdleButtonClicks(){if(nextWave.clicked){mob.add(0,400,1,0))}
+
+void handleButtonClicks() {
+  if (nextWave.clicked) {
+    mobs.add (new Mob(0, 400, 1, 0));
+  }
+}

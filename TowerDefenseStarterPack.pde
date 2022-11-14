@@ -60,12 +60,13 @@ void initializeModes() {
 
 void initializeVariables() {
   //Load Images & Gifs
-  introAnimation=new Gif("gif-start/gif(", ").jpg", 100, 3, width/2, height/2, width, height);
+  introAnimation=new Gif("gif-start/gif(", ").jpg", 100, 3, width/2, height/2, width, height);//nextwaveicon=loadImage("");
   //Load Fonts
 
   //Create Collections of Objects
   mobs=new ArrayList<Mob>();
   towers=new ArrayList<Tower>();
+  bullets=new ArrayList<Bullet>();
   //tts
   towers.add(new Tower(100, 100, 0, 60));
 }

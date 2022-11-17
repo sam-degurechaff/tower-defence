@@ -3,7 +3,7 @@
 
 void play() {
   background(green);
-  introAnimation.show();
+  //introAnimation.show();
   drawMap();
   animateThings();
   drawPlayInterface();
@@ -17,13 +17,20 @@ void drawMap() {
   strokeWeight(30);
   line(0, 400, 200, 400);
   line(200, 400, 200, 200);
+  line(200, 200, 400, 200);
   line(400, 200, 400, 200);
+  line(400, 200, 400, 600);
   line(400, 600, 300, 600);
   line(300, 600, 300, 500);
   line(300, 500, 500, 500);
   line(500, 500, 500, 400);
   line(500, 400, 800, 400);
   strokeWeight(1);
+  int i=0;
+  while (i<8) {
+    nodes[i].show();
+    i++;
+  }
   nodes[0].show();
 }
 
@@ -42,21 +49,25 @@ void animateThings() {
     Mob myMob=mobs.get(i);
     myMob.act();
     myMob.show();
-    i++;
-  }
-  i=0;
-  while (i<towers.size()) {
-    Tower myTower=towers.get (i);
-    myTower.act();
-    myTower.show();
-    i++;
-  }
-  i=0;
-  while (i<bullets.size()) {
-    Bullet mybullet=bullets.get (i);
-    mybullet.act();
-    mybullet.show();
-    i++;
+    if (myMob.hp<=0) {
+      mobs.remove(i);
+    } else {
+      i++;
+    }
+    i=0;
+    while (i<towers.size()) {
+      Tower myTower=towers.get (i);
+      myTower.act();
+      myTower.show();
+      i++;
+    }
+    i=0;
+    while (i<bullets.size()) {
+      Bullet mybullet=bullets.get (i);
+      mybullet.act();
+      mybullet.show();
+      i++;
+    }
   }
 }
 

@@ -76,7 +76,7 @@ void makeButtons() {
   start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
-  nextWave=new Button("START", width/2, 3*height/4, 200, 100, green, white);
+  nextWave=new Button("NEXT", width/2, 3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
 
   //GAMEOVER - Reset
@@ -85,6 +85,17 @@ void makeButtons() {
 void makeNodes() {
   //Plot the nodes on the map
   nodes=new Node[8];
+  nodes[0]=new Node(200, 400, 0, -1);
+  nodes[1]=new Node(200, 200, 1, 0);
+  nodes[2]=new Node(400, 200, 0, 1);
+  nodes[3]=new Node(400, 600, -1, 0);
+  nodes[4]=new Node(300, 600, 0, -1);
+  nodes[5]=new Node(300, 500, 1, 0);
+  nodes[6]=new Node(500, 500, 0, -1);
+  nodes[7]=new Node(500, 400, 1, 0);
+ 
+
+
 
   nodes[0]=new Node(200, 400, 0, -1);
 }

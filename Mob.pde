@@ -36,6 +36,7 @@ class Mob {
       if (dist(myBullet.x, myBullet.y, x, y) <d/2+myBullet.d/2) {
         hp=hp-1;
       }
+      i++;
     }
   }
 }

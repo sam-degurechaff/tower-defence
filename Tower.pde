@@ -12,20 +12,37 @@
 //              mob no matter where they are on the scren.
 
 class Tower {
+  final int PLACING=0;
+  final int PLACED=1;
   float x, y;
   int cooldown, threshold;
+  int mode;
   Tower(float _x, float _y, int c, int th) {
     x=_x;
     y=_y;
     cooldown=c;
     threshold=th;
+    mode=PLACING;
   }
   void show() {
     stroke(black);
     strokeWeight(4);
     fill(blue);
-    square(x, y, 40);
+    if (mode==PLACED) {
+      square(x, y, 40);
+    } else if (mode==PLACING) {
+      square(x, y, 40);
+      if (mousePressed) {
+        square(mouseX, mouseY, 40);
+        if (mousePressed) {
+          mode=PLACED;
+          x=mouseX;
+          y=mouseY;
+        }
+      }
+    }
   }
+  
   void act() {
     cooldown++;
     if (cooldown==threshold) {

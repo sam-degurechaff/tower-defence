@@ -25,13 +25,14 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start, nextWave;
+Button start, nextWave, build, playmode, buyguntower;
 
 //Collections of objects
 Node[] nodes;
 ArrayList<Mob> mobs;
 ArrayList<Tower> towers;
 ArrayList<Bullet> bullets;
+
 //Images and Gifs
 Gif introAnimation;
 //Fonts
@@ -78,7 +79,9 @@ void makeButtons() {
   //PLAY - Next Wave, To Build Mode
   nextWave=new Button("NEXT", width/2, 3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
-
+  build=new Button("build", width/2, 3*height/4, 800, 100, green, white);
+  playmode=new Button("play", width/2, 3*height/4, 800, 180, green, white);
+  buyguntower=new Button("guntower", width/2, 3*height/4, 800, 230, green, white);
   //GAMEOVER - Reset
 }
 
@@ -93,7 +96,7 @@ void makeNodes() {
   nodes[5]=new Node(300, 500, 1, 0);
   nodes[6]=new Node(500, 500, 0, -1);
   nodes[7]=new Node(500, 400, 1, 0);
- 
+
 
 
 

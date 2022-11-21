@@ -2,6 +2,8 @@
 
 
 void play() {
+  build.show();
+
   background(green);
   //introAnimation.show();
   drawMap();
@@ -74,5 +76,9 @@ void animateThings() {
 void handleButtonClicks() {
   if (nextWave.clicked) {
     mobs.add (new Mob(0, 400, 1, 0));
+  }
+  if (build.clicked) {
+    mode=BUILD;
+    buyguntower.show();
   }
 }

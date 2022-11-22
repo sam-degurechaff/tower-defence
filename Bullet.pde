@@ -19,5 +19,12 @@ class Bullet {
   void act() {
     x=x+vx;
     y=y+vy;
+    if (mode==BUILD) {
+      bullets.remove(i);
+    }
+    if (mobs(i)>0) {
+      bullets.show();
+    } else {
+      bullets.remove(i);
+    }
   }
-}

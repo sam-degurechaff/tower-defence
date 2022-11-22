@@ -16,33 +16,31 @@ class Tower {
   final int PLACED=1;
   float x, y;
   int cooldown, threshold;
-  int mode;
+  int towerMode;
   Tower(float _x, float _y, int c, int th) {
     x=_x;
     y=_y;
     cooldown=c;
     threshold=th;
-    mode=PLACING;
+    towerMode=PLACING;
+    
   }
   void show() {
     stroke(black);
     strokeWeight(4);
     fill(blue);
-    if (mode==PLACED) {
+    if (towerMode==PLACED) {
       square(x, y, 40);
-    } else if (mode==PLACING) {
-      square(x, y, 40);
+    } else if (towerMode==PLACING) {
+      square(mouseX, mouseY, 40);
       if (mousePressed) {
-        square(mouseX, mouseY, 40);
-        if (mousePressed) {
-          mode=PLACED;
-          x=mouseX;
-          y=mouseY;
-        }
+        towerMode=PLACED;
+        x=mouseX;
+        y=mouseY;
       }
     }
   }
-  
+
   void act() {
     cooldown++;
     if (cooldown==threshold) {

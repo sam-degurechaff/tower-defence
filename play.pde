@@ -2,7 +2,7 @@
 
 
 void play() {
-  build.show();
+
 
   background(green);
   //introAnimation.show();
@@ -44,6 +44,7 @@ void drawPlayInterface() {
   textSize(20);
   text("Next Wave", 900, 30);
   nextWave.show();
+  build.show();
 }
 void animateThings() {
   int i=0;
@@ -56,22 +57,23 @@ void animateThings() {
     } else {
       i++;
     }
-    i=0;
-    while (i<towers.size()) {
-      Tower myTower=towers.get (i);
-      myTower.act();
-      myTower.show();
-      i++;
-    }
-    i=0;
-    while (i<bullets.size()) {
-      Bullet mybullet=bullets.get (i);
-      mybullet.act();
-      mybullet.show();
-      i++;
-    }
+  }
+  i=0;
+  while (i<towers.size()) {
+    Tower myTower=towers.get (i);
+    myTower.act();
+    myTower.show();
+    i++;
+  }
+  i=0;
+  while (i<bullets.size()) {
+    Bullet mybullet=bullets.get (i);
+    mybullet.act();
+    mybullet.show();
+    i++;
   }
 }
+
 
 void handleButtonClicks() {
   if (nextWave.clicked) {
@@ -79,6 +81,5 @@ void handleButtonClicks() {
   }
   if (build.clicked) {
     mode=BUILD;
-    buyguntower.show();
   }
 }

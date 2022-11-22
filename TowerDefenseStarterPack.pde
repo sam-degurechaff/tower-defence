@@ -79,9 +79,9 @@ void makeButtons() {
   //PLAY - Next Wave, To Build Mode
   nextWave=new Button("NEXT", width/2, 3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
-  build=new Button("build", width/2, 3*height/4, 800, 100, green, white);
-  playmode=new Button("play", width/2, 3*height/4, 800, 180, green, white);
-  buyguntower=new Button("guntower", width/2, 3*height/4, 800, 230, green, white);
+  build=new Button("build", 800, 100, 200, 100, green, white);
+  playmode=new Button("play", 800, 100, 200, 100, green, white);
+  buyguntower=new Button("guntower", 800, 280, 200, 100, green, white);
   //GAMEOVER - Reset
 }
 

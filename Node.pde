@@ -4,7 +4,7 @@
 //the node's instructions.
 
 class Node {
-  float x, y, vx,vy,dx, dy;
+  float x, y, vx, vy, dx, dy;
   Node(float _x, float _y, float _dx, float _dy) {
     x=_x;
     y=_y;

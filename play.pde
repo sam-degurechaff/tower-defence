@@ -6,12 +6,13 @@ void play() {
 
   background(green);
   //introAnimation.show();
-  drawMap();
+  drawMap1();
+  drawmap2();
   animateThings();
   drawPlayInterface();
   handleButtonClicks();
 }
-void drawMap() {
+void drawMap1() {
   fill(green);
   rect(width/2, height/2, width, height);
 
@@ -30,10 +31,19 @@ void drawMap() {
   strokeWeight(1);
   int i=0;
   while (i<8) {
-    nodes[i].show();
+    nodes1[i].show();
     i++;
   }
-  nodes[0].show();
+  nodes1[0].show();
+}
+
+void drawmap2() {
+  int i=0;
+  while (i<8) {
+    map2nodes[i].show();
+    i++;
+  }
+  map2nodes[0].show();
 }
 
 void drawPlayInterface() {
@@ -81,5 +91,8 @@ void handleButtonClicks() {
   }
   if (build.clicked) {
     mode=BUILD;
+  }
+  if (drawmap2.clicked) {
+    drawmap2();
   }
 }

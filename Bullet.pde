@@ -28,3 +28,4 @@ class Bullet {
       bullets.remove(i);
     }
   }
+}

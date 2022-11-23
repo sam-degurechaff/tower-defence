@@ -9,7 +9,6 @@ void build() {
   flashingSign();
   drawBuildInterface();
   handleBuildClicks();
-  
 }
 void flashingSign() {
   count++;
@@ -35,7 +34,5 @@ void handleBuildClicks() {
 
   if (buyguntower.clicked) {
     towers.add(new Tower(0, 0, 0, 30));
-
-    
   }
 }

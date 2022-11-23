@@ -8,6 +8,7 @@ final int INTRO    = 0;
 final int PLAY     = 1;
 final int BUILD    = 2;
 final int GAMEOVER = 3;
+final int MAPSELECT=4;
 int mode;
 
 //Pallette
@@ -25,10 +26,11 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Buttons
-Button start, nextWave, build, playmode, buyguntower;
+Button start, nextWave, build, playmode, buyguntower, drawmap1, drawmap2;
 
 //Collections of objects
-Node[] nodes;
+Node[] nodes1;
+Node[] map2nodes;
 ArrayList<Mob> mobs;
 ArrayList<Tower> towers;
 ArrayList<Bullet> bullets;
@@ -74,7 +76,8 @@ void initializeVariables() {
 
 void makeButtons() {
   //INTRO - Start
-  start = new Button("START", width/2, 3*height/4, 200, 100, white, black);
+  drawmap1 = new Button("MAP1", width/2, 3*height/4, 200, 100, white, black);
+  drawmap2 = new Button("MAP2", width/2, 3*height/2, 200, 100, white, black);
 
   //PLAY - Next Wave, To Build Mode
   nextWave=new Button("NEXT", width/2, 3*height/4, 200, 100, green, white);
@@ -87,20 +90,32 @@ void makeButtons() {
 
 void makeNodes() {
   //Plot the nodes on the map
-  nodes=new Node[8];
-  nodes[0]=new Node(200, 400, 0, -1);
-  nodes[1]=new Node(200, 200, 1, 0);
-  nodes[2]=new Node(400, 200, 0, 1);
-  nodes[3]=new Node(400, 600, -1, 0);
-  nodes[4]=new Node(300, 600, 0, -1);
-  nodes[5]=new Node(300, 500, 1, 0);
-  nodes[6]=new Node(500, 500, 0, -1);
-  nodes[7]=new Node(500, 400, 1, 0);
+  nodes1=new Node[8];
+  nodes1[0]=new Node(200, 400, 0, -1);
+  nodes1[1]=new Node(200, 200, 1, 0);
+  nodes1[2]=new Node(400, 200, 0, 1);
+  nodes1[3]=new Node(400, 600, -1, 0);
+  nodes1[4]=new Node(300, 600, 0, -1);
+  nodes1[5]=new Node(300, 500, 1, 0);
+  nodes1[6]=new Node(500, 500, 0, -1);
+  nodes1[7]=new Node(500, 400, 1, 0);
+
+  int unit=800/5;
+  map2nodes=new Node[12];
+  map2nodes[0]=new Node(unit*1, unit*3, 0, 1);
+  map2nodes[1]=new Node(unit*1, unit*4, 1, 0);
+  map2nodes[2]=new Node(unit*2, unit*4, 0, - 1);
+  map2nodes[3]=new Node(unit*2, unit*2, -1, 0);
+  map2nodes[4]=new Node(unit*1, unit*2, 0, -1);
+  map2nodes[5]=new Node(unit*1, unit*1, 1, 0);
+  map2nodes[6]=new Node(unit*4, unit*1, 0, 1);
+  map2nodes[7]=new Node(unit*4, unit*2, -1, 0);
+  map2nodes[8]=new Node(unit*3, unit*2, 0, 1);
 
 
 
 
-  nodes[0]=new Node(200, 400, 0, -1);
+  nodes1[0]=new Node(200, 400, 0, -1);
 }
 
 
@@ -116,7 +131,10 @@ void draw() {
     build();
   } else if (mode == GAMEOVER) {
     gameOver();
+  } else if (mode==MAPSELECT) {
+    mapselect();
   }
+
 
   textSize(20);
   text(mouseX+","+mouseY, mouseX, mouseY-20);

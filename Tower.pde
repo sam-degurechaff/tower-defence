@@ -23,7 +23,6 @@ class Tower {
     cooldown=c;
     threshold=th;
     towerMode=PLACING;
-    
   }
   void show() {
     stroke(black);

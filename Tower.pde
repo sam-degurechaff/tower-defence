@@ -61,12 +61,14 @@ class Tower {
 
   void act() {
     cooldown++;
+    while(towertype==GUN){
     if (cooldown==threshold) {
       cooldown=0;
       bullets.add(new Bullet(x, y, 0, -10));
       bullets.add(new Bullet(x, y, 0, 10));
       bullets.add(new Bullet(x, y, -10, 0));
       bullets.add(new Bullet(x, y, 0, 10));
-    }
+    }}
+    while(towertype==MORTAR){AoEring.add(new aoe(x,y));
   }
 }

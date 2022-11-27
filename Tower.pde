@@ -26,9 +26,9 @@ class Tower {
     threshold=th;
     towerMode=PLACING;
     towertype=type;
-    if (type=guntower)threshold=10;
-    if (type=mortar)threshold=30;
-    if (type=sniper)threshold=50;
+    if (towertype=GUN)threshold=10;
+    if (towertype=MORTAR)threshold=30;
+    if (towertype=SNIPER)threshold=50;
   }
   void show() {
     stroke(black);
@@ -43,6 +43,9 @@ class Tower {
         x=mouseX;
         y=mouseY;
       }
+      if(towertype==GUN) showguntower();
+      if(towertype==MORTAR) showmortartower();
+      if(towertype==SNIPER) showsnipertower();
     }
   }
 

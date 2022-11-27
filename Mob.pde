@@ -5,7 +5,9 @@
 //Once the player has no more health, it's game over!
 
 class Mob {
-  float x, y, vx, vy, d, hp;
+  float x, y, vx, vy, d, hp,hpmax,speed;
+  color fillcolor;
+  int value;
   Mob(float _x, float _y, float _vx, float _vy) {
     x=_x;
     y=_y;
@@ -20,8 +22,8 @@ class Mob {
     circle(x, y, d);
   }
   void act() {
-    x=x+vx;
-    y=y+vy;
+    x=x+vx*speed;
+    y=y+vy*speed;
     int i=0;
     while (i<nodes1.length) {
       if (dist(nodes1[i].x, nodes1[i].y, x, y)<4) {

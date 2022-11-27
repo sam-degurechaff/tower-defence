@@ -21,6 +21,14 @@ color purple=#6c4c93;
 color white = #ffffff;
 color black = #000000;
 
+//towertypes
+final int GUN=0;
+final int MORTAR=1;
+final int SNIPER=2;
+
+//price of a tower
+final int[] price=(5,10,15);
+
 //Mouse & Keyboard interaction variables
 boolean mouseReleased;
 boolean wasPressed;

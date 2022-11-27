@@ -38,6 +38,7 @@ class Tower {
       square(x, y, 40);
     } else if (towerMode==PLACING) {
       square(mouseX, mouseY, 40);
+      }
       if (mousePressed) {
         towerMode=PLACED;
         x=mouseX;
@@ -46,6 +47,15 @@ class Tower {
       if(towertype==GUN) showguntower();
       if(towertype==MORTAR) showmortartower();
       if(towertype==SNIPER) showsnipertower();
+    }
+    void showguntower(){
+    fill (blue);
+    }
+    void showmortartower(){
+    fill (red);
+    }
+    void showsnipertower(){
+    fill (black);
     }
   }
 

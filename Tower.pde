@@ -17,12 +17,18 @@ class Tower {
   float x, y;
   int cooldown, threshold;
   int towerMode;
-  Tower(float _x, float _y, int c, int th) {
+  int towertype;
+  
+  Tower(float _x, float _y, int c, int th, int type) {
     x=_x;
     y=_y;
     cooldown=c;
     threshold=th;
     towerMode=PLACING;
+    towertype=type;
+    if (type=guntower)threshold=10;
+    if (type=mortar)threshold=30;
+    if (type=sniper)threshold=50;
   }
   void show() {
     stroke(black);

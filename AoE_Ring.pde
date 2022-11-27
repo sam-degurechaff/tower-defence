@@ -3,7 +3,7 @@
 //short period of time.
 
 class AoE_Ring extends tower{
-circle(float _x,float _y,int s);
+AoEring(float _x,float _y,int s);
 super(_x,_y);
 s=80;
 tint(255, 127);

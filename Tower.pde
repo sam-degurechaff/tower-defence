@@ -18,7 +18,7 @@ class Tower {
   int cooldown, threshold;
   int towerMode;
   int towertype;
-  
+
   Tower(float _x, float _y, int c, int th, int type) {
     x=_x;
     y=_y;
@@ -38,37 +38,39 @@ class Tower {
       square(x, y, 40);
     } else if (towerMode==PLACING) {
       square(mouseX, mouseY, 40);
-      }
-      if (mousePressed) {
-        towerMode=PLACED;
-        x=mouseX;
-        y=mouseY;
-      }
-      if(towertype==GUN) showguntower();
-      if(towertype==MORTAR) showmortartower();
-      if(towertype==SNIPER) showsnipertower();
     }
-    void showguntower(){
-    fill (blue);
+    if (mousePressed) {
+      towerMode=PLACED;
+      x=mouseX;
+      y=mouseY;
     }
-    void showmortartower(){
-    fill (red);
-    }
-    void showsnipertower(){
-    fill (black);
-    }
+    if (towertype==GUN) showguntower();
+    if (towertype==MORTAR) showmortartower();
+    if (towertype==SNIPER) showsnipertower();
   }
+  void showguntower() {
+    fill (blue);
+  }
+  void showmortartower() {
+    fill (red);
+  }
+  void showsnipertower() {
+    fill (black);
+  }
+}
 
-  void act() {
-    cooldown++;
-    while(towertype==GUN){
+void act() {
+  cooldown++;
+  while (towertype==GUN) {
     if (cooldown==threshold) {
       cooldown=0;
       bullets.add(new Bullet(x, y, 0, -10));
       bullets.add(new Bullet(x, y, 0, 10));
       bullets.add(new Bullet(x, y, -10, 0));
       bullets.add(new Bullet(x, y, 0, 10));
-    }}
-    while(towertype==MORTAR){AoEring.add(new aoe(x,y));
+    }
+  }
+  while (towertype==MORTAR) {
+    aoering.add(new Bullet(x, y, 0, -10));
   }
 }

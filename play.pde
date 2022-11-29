@@ -96,25 +96,24 @@ void handleButtonClicks() {
   if (drawmap2.clicked) {
     drawmap2();
   }
- 
- void addwave(){
-  i=0
-  int x=0;
-  while(i<wavenumber*2){
-  mobs.add(new mob(beginx+x,beginy,1,0));
-  x=x-50;
-  i++;
-  }
-  am=random(1,4);
-  if(wavenumber*am%3==0){
-  i=0;
-  x=50;
-  }
-  while(i<wavenumber/3){
-  mob.add(new npmob(begin x+x,begin y,1,0));
-  x=x-100;
-  i++;
-  
-  }
+
+  void addwave() {
+    i=0
+      int x=0;
+    while (i<wavenumber*2) {
+      mobs.add(new mob(beginx+x, beginy, 1, 0));
+      x=x-50;
+      i++;
+    }
+    am=random(1, 4);
+    if (wavenumber*am%3==0) {
+      i=0;
+      x=50;
+    }
+    while (i<wavenumber/3) {
+      hpmobs.add(new hpMob(begin x+x, begin y, 1, 0));
+      x=x-100;
+      i++;
+    }
   }
 }

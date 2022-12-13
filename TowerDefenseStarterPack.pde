@@ -40,7 +40,7 @@ Button start, nextWave, build, playmode, buyguntower, drawmap1, drawmap2;
 Node[] nodes1;
 Node[] map2nodes;
 ArrayList<Mob> mobs;
-ArrayList<hpMob> hpmobs;
+ArrayList<hpmob> hpmobs;
 ArrayList<Tower> towers;
 ArrayList<Bullet> bullets;
 

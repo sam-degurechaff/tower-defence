@@ -26,9 +26,9 @@ class Tower {
     threshold=th;
     towerMode=PLACING;
     towertype=type;
-    if (towertype=GUN)threshold=10;
-    if (towertype=MORTAR)threshold=30;
-    if (towertype=SNIPER)threshold=50;
+    if (towertype==GUN)threshold=10;
+    if (towertype==MORTAR)threshold=30;
+    if (towertype==SNIPER)threshold=50;
   }
   void show() {
     stroke(black);
@@ -57,20 +57,21 @@ class Tower {
   void showsnipertower() {
     fill (black);
   }
-}
 
-void act() {
-  cooldown++;
-  while (towertype==GUN) {
-    if (cooldown==threshold) {
-      cooldown=0;
-      bullets.add(new Bullet(x, y, 0, -10));
-      bullets.add(new Bullet(x, y, 0, 10));
-      bullets.add(new Bullet(x, y, -10, 0));
-      bullets.add(new Bullet(x, y, 0, 10));
+
+  void act() {
+    cooldown++;
+    while (towertype==GUN) {
+      if (cooldown==threshold) {
+        cooldown=0;
+        bullets.add(new Bullet(x, y, 0, -10));
+        bullets.add(new Bullet(x, y, 0, 10));
+        bullets.add(new Bullet(x, y, -10, 0));
+        bullets.add(new Bullet(x, y, 0, 10));
+      }
     }
-  }
-  while (towertype==MORTAR) {
-    aoering.add(new Bullet(x, y, 0, -10));
+    while (towertype==MORTAR) {
+      bullets.add(new AoE_Ring(x, y, 0, -10,50));
+    }
   }
 }

@@ -10,6 +10,8 @@ class Bullet {
     vy=_vy;
     d=15;
   }
+ 
+  
   void show() {
     stroke(black);
     strokeWeight(2);
@@ -22,10 +24,10 @@ class Bullet {
     if (mode==BUILD) {
       bullets.remove(i);
     }
-    if (mobs(i)>0) {
-      bullets.show();
-    } else {
-      bullets.remove(i);
-    }
+    //if (mobs.size()>0) {
+    //  bullets.show();
+    //} else {
+    //  bullets.remove(i);
+    //}
   }
 }

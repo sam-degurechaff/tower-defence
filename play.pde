@@ -1,6 +1,8 @@
 //This function draws the PLAY screen
 
-//int wavenumber=
+int wavenumber; float am;
+
+
 void play() {
 
 
@@ -77,7 +79,7 @@ void animateThings() {
     i++;
   }
   i=0;
-  while (i<bullets.size()) {
+  while (i<bullets.size()&&mobs.size()>0) {
     Bullet mybullet=bullets.get (i);
     mybullet.act();
     mybullet.show();
@@ -102,7 +104,7 @@ void addwave() {
   i=0;
   int x=0;
   while (i<wavenumber*2) {
-    mobs.add(new mob(beginx+x, beginy, 1, 0));
+    mobs.add(new Mob(begin.x+x, begin.y, 1, 0));
     x=x-50;
     i++;
   }
@@ -112,7 +114,7 @@ void addwave() {
     x=50;
   }
   while (i<wavenumber/3) {
-    hpmobs.add(new hpmob(beginx+x, beginy, 1, 0));
+    hpmobs.add(new hpmob(begin.x+x, begin.y, 1, 0));
     x=x-100;
     i++;
   }

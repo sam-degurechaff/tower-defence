@@ -21,10 +21,17 @@ class Node {
     x=x+vx;
     y=y+vy;
     int i=0;
-    while (i<nodes.length) {
-      if (dist(nodes[i].x, nodes[i].y, x, y)<4) {
-        vx=nodes[i].dx;
-        vy=nodes[i].dy;
+    while (i<nodes1.length) {
+      if (dist(nodes1[i].x, nodes1[i].y, x, y)<4) {
+        vx=nodes1[i].dx;
+        vy=nodes1[i].dy;
+      }
+      i++;
+    }
+    while (i<map2nodes.length) {
+      if (dist(map2nodes[i].x, map2nodes[i].y, x, y)<4) {
+        vx=map2nodes[i].dx;
+        vy=map2nodes[i].dy;
       }
       i++;
     }

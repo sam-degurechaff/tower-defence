@@ -4,7 +4,8 @@ String text;
 int i;
 
 void build() {
-  drawMap();
+  drawMap1();
+  drawmap2();
   animateThings();
   flashingSign();
   drawBuildInterface();
@@ -23,7 +24,11 @@ void drawBuildInterface() {
   buyguntower.show();
   int i=0;
   while (i<8) {
-    nodes[i].show();
+    nodes1[i].show();
+    i++;
+  }
+  while (i<8) {
+    map2nodes[i].show();
     i++;
   }
 }
@@ -33,6 +38,6 @@ void handleBuildClicks() {
   }
 
   if (buyguntower.clicked) {
-    towers.add(new Tower(0, 0, 0, 30));
+    towers.add(new Tower(0, 0, 0, 30,0));
   }
 }

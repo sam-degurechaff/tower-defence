@@ -12,7 +12,7 @@ final int MAPSELECT=4;
 int mode;
 
 //Pallette
-
+color red=255;
 color pink=#ff595e;
 color orange=#ffca3a;
 color green=#8ac926;
@@ -39,10 +39,12 @@ Button start, nextWave, build, playmode, buyguntower, drawmap1, drawmap2;
 //Collections of objects
 Node[] nodes1;
 Node[] map2nodes;
+Node[] nodes;
 ArrayList<Mob> mobs;
 ArrayList<hpmob> hpmobs;
 ArrayList<Tower> towers;
 ArrayList<Bullet> bullets;
+//ArrayList<AoE_ring>;
 
 //Images and Gifs
 Gif introAnimation;
@@ -72,7 +74,7 @@ void initializeModes() {
 
 void initializeVariables() {
   //Load Images & Gifs
-  introAnimation=new Gif("gif-start/gif(", ").jpg", 100, 3, width/2, height/2, width, height);//nextwaveicon=loadImage("");
+  introAnimation=new Gif("gif-start/gif(", ").jpg", 88, 3, width/2, height/2, width, height);//nextwaveicon=loadImage("");
   //Load Fonts
 
   //Create Collections of Objects
@@ -80,14 +82,14 @@ void initializeVariables() {
   towers=new ArrayList<Tower>();
   bullets=new ArrayList<Bullet>();
   //tts
-  towers.add(new Tower(100, 100, 0, 60));
+  towers.add(new Tower(100, 100, 0, 60, 0));
 }
 
 void makeButtons() {
   //INTRO - Start
   drawmap1 = new Button("MAP1", width/2, 3*height/4, 200, 100, white, black);
   drawmap2 = new Button("MAP2", width/2, 3*height/2, 200, 100, white, black);
-
+  start= new Button("start", width/2, height/2, 200, 100, white, black);
   //PLAY - Next Wave, To Build Mode
   nextWave=new Button("NEXT", width/2, 3*height/4, 200, 100, green, white);
   //BUILD - To play mode, Buy Sniper, Buy Gun, Buy AoE
